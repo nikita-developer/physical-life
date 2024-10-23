@@ -15,13 +15,13 @@
 <template>
   <div class="page">
     <div class="container">
-      <div class="page__body">
+      <TransitionGroup class="page__body" name="list" tag="div">
         <Card
           v-for="character in store.characters.results"
           :key="character.id"
           :character
         />
-      </div>
+      </TransitionGroup>
     </div>
   </div>
 </template>

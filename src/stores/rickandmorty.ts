@@ -93,5 +93,6 @@ export const useRickAndMortyStore = defineStore('rickandmorty', () => {
     all_locations,
     character_name,
     location_item,
+    is_load_get_locations,
   }
 })

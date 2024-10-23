@@ -24,6 +24,7 @@
           single-line
           variant="solo"
           @click:append-inner="filter"
+          @keydown.enter="filter"
         />
         <v-select
           v-model="store.location_item"
