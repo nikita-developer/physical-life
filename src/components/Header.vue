@@ -8,6 +8,7 @@
     <div class="container">
       <div class="header__body">
         <v-text-field
+          v-model="store.character_name"
           append-inner-icon="mdi-magnify"
           density="compact"
           hide-details
@@ -15,7 +16,7 @@
           :loading="store.is_load_get_characters"
           single-line
           variant="solo"
-          @click:append-inner="store.getCharacters()"
+          @click:append-inner="store.filterCharacter(true)"
         />
       </div>
     </div>
