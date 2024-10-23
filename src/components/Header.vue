@@ -1,6 +1,13 @@
 <script setup lang="ts">
   import { useRickAndMortyStore } from '@/stores/rickandmorty'
   const store = useRickAndMortyStore()
+
+  const filter = () => {
+    store.filterCharacter(true)
+    store.location_item.name = 'Не выбрано'
+  }
+
+  onMounted(() => store.getLocations())
 </script>
 
 <template>
@@ -12,11 +19,22 @@
           append-inner-icon="mdi-magnify"
           density="compact"
           hide-details
-          label="Search templates"
-          :loading="store.is_load_get_characters"
+          label="Поиск по имени"
+          :loading="store.is_load_filter_character"
           single-line
           variant="solo"
-          @click:append-inner="store.filterCharacter(true)"
+          @click:append-inner="filter"
+        />
+        <v-select
+          v-model="store.location_item"
+          density="compact"
+          hide-details
+          item-title="name"
+          item-value="name"
+          :items="store.all_locations"
+          label="Поиск по локациям"
+          return-object
+          variant="solo"
         />
       </div>
     </div>

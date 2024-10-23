@@ -10,6 +10,7 @@ export default interface Location {
 
 export const defaultLocation = (): Location => {
   return {
+    name: 'Не выбрано',
     residents: [],
   }
 }

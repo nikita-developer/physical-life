@@ -13,7 +13,9 @@ export const checkPosition = () => {
   const threshold = height - screenHeight / 4
   const position = scrolled + screenHeight
 
-  if (position >= threshold) store.filterCharacter()
+  if (store.location_item.name === 'Не выбрано') {
+    if (position >= threshold) store.filterCharacter()
+  }
 }
 
 export const throttle = (callee, timeout) => {
