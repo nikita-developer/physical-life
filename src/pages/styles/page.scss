@@ -1,0 +1,7 @@
+.page {
+  &__body {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+}

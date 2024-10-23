@@ -1,0 +1,21 @@
+.card {
+  min-width: 280px;
+  max-width: 406px;
+  width: 100%;
+
+  @media (max-width: 1280px) {
+    max-width: 467px;
+  }
+
+  @media (max-width: 980px) {
+    max-width: 361px;
+  }
+
+  @media (max-width: 768px) {
+    max-width: 576px;
+  }
+
+  @media (max-width: 576px) {
+    max-width: 480px;
+  }
+}
