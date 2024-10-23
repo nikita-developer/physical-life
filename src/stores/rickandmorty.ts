@@ -1,4 +1,3 @@
-import Character, { defaultCharacter } from '@/interfaces/Character'
 import Location, { defaultLocation } from '@/interfaces/Location'
 import Page, { defaultPage } from '@/interfaces/Page'
 import { defineStore } from 'pinia'
@@ -71,6 +70,7 @@ export const useRickAndMortyStore = defineStore('rickandmorty', () => {
     try {
       const res = await fetch(`https://rickandmortyapi.com/api/location/?page=${location_page}`)
       locations.value = await res.json()
+      // @ts-ignore
       all_locations.value = [...all_locations.value, ...locations.value.results]
       await getLocations(++location_page, locations.value.info.pages)
       is_load_get_locations.value = false

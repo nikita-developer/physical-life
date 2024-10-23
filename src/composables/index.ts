@@ -18,10 +18,10 @@ export const checkPosition = () => {
   }
 }
 
-export const throttle = (callee, timeout) => {
-  let timer = null
+export const throttle = (callee: any, timeout: number) => {
+  let timer: any
 
-  return (...args) => {
+  return (...args: any) => {
     if (timer) return
 
     timer = setTimeout(() => {
